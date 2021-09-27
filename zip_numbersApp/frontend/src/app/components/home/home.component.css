@@ -1,0 +1,75 @@
+.main-content {
+}
+
+.title-section {
+  text-align: center;
+  margin: 4rem auto 2rem;
+  width: 50%;
+}
+
+.title-section h1 {
+  font-family: "Spartan", sans-serif;
+  font-weight: 500;
+}
+
+.title-section h4 {
+  font-family: "Spartan", sans-serif;
+  font-weight: 500;
+}
+
+.flat-card {
+  background-color: #eeeeee;
+  border-radius: 4px;
+  font-family: "Spartan", sans-serif;
+  padding: 0.8rem 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.flat-card p {
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+.flat-card mat-icon {
+  font-size: 17px;
+}
+
+.main-card {
+  margin: 1rem auto;
+  padding: 2rem;
+  width: 50%;
+}
+
+.field-full-width {
+  width: 100%;
+}
+
+.main-card h4 {
+  font-family: "Spartan", sans-serif;
+}
+
+.btn-content {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-content button {
+  margin-top: 1rem;
+  font-family: "Spartan", sans-serif;
+  font-size: 15px;
+  padding: 0.2rem 2rem;
+}
+
+/* == Media Query == */
+@media (max-width: 768px) {
+  .title-section {
+    width: 90%;
+  }
+
+  .main-card {
+    width: 90%;
+  }
+}
