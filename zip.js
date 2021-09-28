@@ -15,7 +15,7 @@ removeRepeat(numArr) */
 //Parsear los números
 //Pushearlos en un nuevo array
 
-const userInput = document.querySelector('#numInput'); 
+//const userInput = document.querySelector('#numInput'); 
 const numGroup = '1,4,6,23,5,7,2,15,3,2,1,1,1,6,7'
 
 //=== Separar y parsear numeros ===
@@ -69,10 +69,10 @@ const orderNums = (arr) =>{
         console.log(highNums)
 
         //Construya un array con los menores
-        const lowNums = numsArr.sort((a, b) => { return b - a }).slice(Math.floor(numsArr.length/2, numsArr.length)); //Desde la mitad hasta el final
+        const lowNums = numsArr.sort((a, b) => { return b - a }).slice(Math.floor(numsArr.length/2), numsArr.length); //Desde la mitad hasta el final
         console.log(lowNums)
 
-        //Juntemos intercaladamente los arrays
+        //Juntar intercaladamente los arrays
         let zipNumbers = []
         for(let j = 0; j <= numsArr.length; j++){
 

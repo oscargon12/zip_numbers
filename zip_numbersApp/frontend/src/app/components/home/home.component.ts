@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -15,15 +15,14 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  generateAlert() {// Las funciones se escriben así 
-    console.log('Holaaaa')
-		alert('Mundo') 
-	}
-
   getNums(event: Event) {
     event.preventDefault();
     let numGroup = this.userInput.value;
     console.log(numGroup)
+
+    if(numGroup === undefined || numGroup === " " || numGroup === NaN){
+      console.log('Debes ingresar un numero')
+    }
 
     let splitNums = numGroup.split(',') //Esto separa el string en varios strings
     //console.log(splitNums)
@@ -58,6 +57,35 @@ export class HomeComponent implements OnInit {
     
     const numsArr = resultNums;
     
+    if(numsArr === undefined){
+        console.log('Debes ingresar un numero')
+    } else {
+
+        console.log(`Hay ${numsArr.length} numeros, ${Math.floor(numsArr.length/2)} mayores y ${Math.ceil(numsArr.length/2)} menores`)
+    
+        //Construya un array con los más grandes
+        const highNums = numsArr.sort(function (a, b) { return b - a; }).slice(0, Math.floor(numsArr.length/2)); //desde el index 0 hasta la mitad
+        console.log(highNums)
+
+        //Construya un array con los menores
+        const lowNums = numsArr.sort((a, b) => { return b - a }).slice(Math.floor(numsArr.length/2), numsArr.length); //Desde la mitad hasta el final
+        console.log(lowNums)
+
+        //Juntar intercaladamente los arrays
+        let zipNumbers = []
+        for(let j = 0; j <= numsArr.length; j++){
+
+            const lows = lowNums[j]
+            zipNumbers.push(lows);
+            const highs = highNums[j]
+            zipNumbers.push(highs);
+        }
+
+        zipNumbers = zipNumbers.slice(0, numsArr.length); //Eliminar basura
+        console.log('\n Numeros agrupados')
+        console.log(zipNumbers)
+        
+    }
   }
 
 }
