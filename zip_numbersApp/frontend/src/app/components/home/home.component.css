@@ -63,6 +63,14 @@
   padding: 0.2rem 2rem;
 }
 
+.result {
+  font-family: "Spartan", sans-serif;
+}
+
+.num-result:nth-child(odd) {
+  color: green;
+}
+
 /* == Media Query == */
 @media (max-width: 768px) {
   .title-section {

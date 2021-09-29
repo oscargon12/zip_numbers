@@ -4,7 +4,9 @@
         <h1 class="main-title color-75"><span class="material-icons"> timeline </span> Zip Numbers</h1>
         <h4 class="color-42">Este algoritmo organiza todos los números que ingreses, a modo de sierra o cremallera</h4>
         <div class="flat-card">
-            <p> <mat-icon>info</mat-icon> Siempre un número deberá estar entre dos números mayores a él, a menos que sea el primer o último número</p>
+            <p> <mat-icon>info</mat-icon> Siempre un número deberá estar entre dos números mayores a él, a menos que sea el primer o último número <br>
+            El algoritmo eliminará los números repetidos
+            </p>
         </div>
     </section>
     <mat-card class="m-2 mat-elevation-z3 main-card">
@@ -12,26 +14,19 @@
         <form class="example-form" style="width: 100%;">
             <mat-form-field class="field-full-width" appearance="fill">
                 <mat-label for="numInput">Números aleatorios</mat-label>
-                <input matInput placeholder="Ejem: 1,4,7,6,23,5" id="numInput" >
+                <input matInput placeholder="Ejem: 1,4,7,6,23,5" id="numInput" [formControl]="userInput">
             </mat-form-field>
         </form>
         <div class="btn-content">
-            <button mat-raised-button color="primary">Procesar números</button>
+            <button mat-raised-button color="primary" (click)="getNums($event)">Procesar números</button>
         </div>
     </mat-card>
     
     <!-- Result -->
     <mat-card class="m-2 mat-elevation-z3 main-card">
         <h4>El resultado es:</h4>
-        
+        <h2 #asResult class="result">  </h2>
     </mat-card>
-
-    <p>
-        Email: <br/>
-        <input type="email" [formControl]="userInput">
-    </p>
-    <button type="button" (click)="getNums($event)">Save</button>
-    
 </main>
 
 
